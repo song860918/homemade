@@ -5,10 +5,11 @@ class RecipesController < ApplicationController
   end
  
   def new
+    @recipe = Recipe.new
   end
 
   def create
-    @recipe = Recipe.new(precipe_params)
+    @recipe = Recipe.new(recipe_params)
     @recipe.save
     redirect_to @recipe
   end
@@ -25,6 +26,13 @@ class RecipesController < ApplicationController
 
   def edit
     @recipe = Recipe.find(params[:id])
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    
+    redirect_to recipes_path
   end
   
   private

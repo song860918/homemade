@@ -10,6 +10,7 @@
     <tr>
       <td><%= link_to r.title, recipe_path(r) %>
       <td><%= link_to 'Edit', edit_recipe_path(r) %>
+      <td><%= link_to 'Delete', recipe_path(r), method: :delete, data: { confirm: "Are you sure?" } %>
     </tr>
   <% end %>
 </table>
