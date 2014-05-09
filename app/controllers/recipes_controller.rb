@@ -16,6 +16,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    #@comment = @recipe.comments.new
   end
 
   def update
